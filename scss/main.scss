@@ -1,0 +1,41 @@
+@import "bootstrap/bootstrap";
+
+:root {
+  --white: #ffffff;
+  --green: #749d12;
+  --blue: #27294a;
+  --red: #ff0000;
+}
+body {
+  width: 100%;
+  height: 100%;
+  background: var(--white);
+}
+* {
+  margin-top: 0;
+}
+ul {
+  padding: 0;
+  margin: 0;
+}
+li {
+  list-style: none;
+}
+@mixin flexprop($jc, $ai) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+}
+
+.custom-class {
+  width: 500px;
+  height: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  @include flexprop(space-between, center);
+}
+@include media-breakpoint-up(lg) {
+  .custom-class {
+    @include flexprop(center, center);
+  }
+}
